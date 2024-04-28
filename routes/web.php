@@ -25,6 +25,7 @@ Route::middleware([
 ])->group(function () {
 
 Route::get('/', HomeController::class)->name('home');
+Route::get('/dashboard', HomeController::class)->name('home');
     // Route::get('/dashboard', function () {
     //     return view('dashboard');
     // })->name('dashboard');
