@@ -10,7 +10,6 @@ use Livewire\WithPagination;
 
 class PostComments extends Component
 {
-    use WithPagination;
     public Post $post;
     #[Rule('required|min:3|max:200')]
     public string $comment;
@@ -31,7 +30,7 @@ class PostComments extends Component
 
     #[Computed()]
     public function comments() {
-        return $this?->post?->comments()->latest()->paginate(5);
+        return $this?->post?->comments()->with('user')->latest()->paginate(5);
     }
     public function render()
     {

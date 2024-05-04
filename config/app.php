@@ -159,7 +159,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Barryvdh\Debugbar\ServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -183,6 +183,7 @@ return [
     | the aliases are "lazy" loaded so they don't hinder performance.
     |
     */
+    'Debugbar' => Barryvdh\Debugbar\Facades\Debugbar::class,
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
