@@ -6,21 +6,21 @@
                 <button class="gray-500 text-xs mr-3" wire:click="clearFilters()">X</button>
             @endif
             @if ($this->activeCategory)
-            All Post From :
+            {{ __('blog.src') }} :
                 <x-badge
                 wire:navigate href="{{ route('posts.index', ['category'=>$this->activeCategory->slug]) }}"
                     :textColor="$this->activeCategory->text_color" :bgColor="$this->activeCategory->bg_color">{{$this->activeCategory->title}}</x-badge>
             @endif
             @if ($search)
-                Containing : <strong>{{$search}}</strong>
+            {{ __('blog.contain') }} : <strong>{{$search}}</strong>
             @endif
 
         </div>
         <div class="flex items-center space-x-4 font-light ">
             <x-checkbox wire:model.live='popular'/>
-            <x-label>Popular</x-label>
-            <button class="{{$sort === 'desc' ? 'text-gray-900 py-4 border-b border-gray-700' : 'text-gray-500'}} py-4" wire:click="setSort('desc')">Latest</button>
-            <button class="{{$sort === 'asc' ? 'text-gray-900 py-4 border-b border-gray-700' : 'text-gray-500'}}" wire:click="setSort('asc')">Oldest</button>
+            <x-label>{{ __('blog.popular') }}</x-label>
+            <button class="{{$sort === 'desc' ? 'text-gray-900 py-4 border-b border-gray-700' : 'text-gray-500'}} py-4" wire:click="setSort('desc')">{{ __('blog.latest') }}</button>
+            <button class="{{$sort === 'asc' ? 'text-gray-900 py-4 border-b border-gray-700' : 'text-gray-500'}}" wire:click="setSort('asc')">{{ __('blog.oldest') }}</button>
         </div>
     </div>
     <div class="py-4">
