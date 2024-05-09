@@ -98,6 +98,17 @@ return [
 
     'fallback_locale' => 'en',
 
+    'supported_locales' => [
+        'en' => [
+            'name'  => 'English',
+            'icon'  => 'us',
+        ],
+        'id' => [
+            'name'  => 'Indonesia',
+            'icon'  => 'id',
+        ],
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Faker Locale
